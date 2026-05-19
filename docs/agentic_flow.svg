@@ -1,0 +1,83 @@
+<svg width="680" height="580" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+
+  <!-- Node 1: Patient Request -->
+  <rect x="150" y="20" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="250" y="36" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#444441">Patient Request</text>
+  <text x="250" y="52" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#5F5E5A">lat · lng · specialty · insurance plan</text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="250" y1="64" x2="250" y2="82" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,80 250,86 254,80" fill="#888780"/>
+
+  <!-- Node 2: Network Resolver -->
+  <rect x="150" y="86" width="200" height="50" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="250" y="104" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#3C3489">Network Resolver</text>
+  <text x="250" y="122" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#534AB7">insurance plan resolves network</text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="250" y1="136" x2="250" y2="154" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,152 250,158 254,152" fill="#888780"/>
+
+  <!-- Node 3: Federated Slot Repository -->
+  <rect x="150" y="158" width="200" height="50" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="250" y="176" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#085041">Federated Slot Repository</text>
+  <text x="250" y="194" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#0F6E56">asyncio.gather() · parallel FHIR queries</text>
+
+  <!-- Arrow 3 to 4 -->
+  <line x1="250" y1="208" x2="250" y2="226" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,224 250,230 254,224" fill="#888780"/>
+
+  <!-- Node 4: get available slots -->
+  <rect x="150" y="230" width="200" height="44" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="250" y="252" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#0C447C">get available slots</text>
+
+  <!-- Arrow 4 to 5 -->
+  <line x1="250" y1="274" x2="250" y2="292" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,290 250,296 254,290" fill="#888780"/>
+
+  <!-- Node 5: slots found? -->
+  <rect x="150" y="296" width="200" height="44" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="250" y="318" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#3C3489">slots found?</text>
+
+  <!-- YES arrow to primary care -->
+  <line x1="350" y1="318" x2="415" y2="318" stroke="#888780" stroke-width="1"/>
+  <polygon points="413,314 419,318 413,322" fill="#888780"/>
+  <text x="382" y="310" text-anchor="middle" font-size="11" fill="#3B6D11">YES</text>
+
+  <!-- Node 5a: primary care -->
+  <rect x="419" y="296" width="155" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="496" y="312" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="500" fill="#085041">primary care</text>
+  <text x="496" y="328" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#0F6E56">slots returned</text>
+
+  <!-- NO arrow to urgent care -->
+  <line x1="250" y1="340" x2="250" y2="368" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,366 250,372 254,366" fill="#888780"/>
+  <text x="266" y="354" font-size="11" fill="#A32D2D">NO</text>
+
+  <!-- Node 5b: get urgent care -->
+  <rect x="150" y="372" width="200" height="44" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="250" y="388" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#712B13">get urgent care</text>
+  <text x="250" y="404" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#993C1D">agentic failover · no dead end</text>
+
+  <!-- primary care L-bend to find pharmacy -->
+  <polyline points="496,340 496,461 350,461" fill="none" stroke="#888780" stroke-width="1"/>
+  <polygon points="348,457 354,461 348,465" fill="#888780"/>
+
+  <!-- urgent care to find pharmacy -->
+  <line x1="250" y1="416" x2="250" y2="450" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,448 250,454 254,448" fill="#888780"/>
+
+  <!-- Node 6: find pharmacy -->
+  <rect x="150" y="454" width="200" height="50" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="250" y="472" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#633806">find pharmacy</text>
+  <text x="250" y="490" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#854F0B">always · closes care loop</text>
+
+  <!-- Arrow 6 to 7 -->
+  <line x1="250" y1="504" x2="250" y2="522" stroke="#888780" stroke-width="1"/>
+  <polygon points="246,520 250,526 254,520" fill="#888780"/>
+
+  <!-- Node 7: RouteResponse + MTTR -->
+  <rect x="100" y="526" width="300" height="50" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="250" y="544" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#085041">RouteResponse + MTTR</text>
+  <text x="250" y="562" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#0F6E56">resolved · mttr_seconds · agent_reasoning</text>
+</svg>

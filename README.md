@@ -77,7 +77,7 @@ The routing decision is made by Claude (Anthropic) using autonomous tool calling
 
 ## Live Demo
 
-Try the chatbot: [continuum-health.onrender.com](<YOUR_STREAMLIT_URL>)
+Try the chatbot: [continuum-health.onrender.com](http://localhost:8501/)
 
 Walk through the conversational flow. Select your insurance plan and location. Continuum resolves your provider network, routes you to the nearest available slot, and surfaces an in-network pharmacy. Everything tracked as MTTR in the dashboard tab.
 
