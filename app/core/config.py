@@ -7,6 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 class Settings(BaseSettings):
     anthropic_api_key: str
+    langchain_tracing_v2: str = "true"
+    langchain_api_key: str = ""
+    langchain_project: str = "continuum-health"
     environment: str = "development"
     radius_miles: int = 15
     provider_data_path: str = "app/data/providers.json"

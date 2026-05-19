@@ -5,6 +5,8 @@ from pathlib import Path
 
 import anthropic
 from anthropic.types import Message, MessageParam
+from langsmith import traceable
+from langsmith.wrappers import wrap_anthropic
 
 from app.interfaces.routing_engine import IRoutingEngine
 from app.interfaces.pharmacy_locator import IPharmacyLocator
@@ -43,8 +45,10 @@ class RoutingEngine(IRoutingEngine):
         self._pharmacy_locator = pharmacy_locator
         self._network_resolver = NetworkResolver()
         self._settings = get_settings()
-        self._client = anthropic.Anthropic(
+        self._client = wrap_anthropic(
+            anthropic.Anthropic(
             api_key=self._settings.anthropic_api_key
+            )
         )
 
     def __get_federated_repository(
