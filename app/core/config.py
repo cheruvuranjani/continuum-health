@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     allowed_origins: list = [
         "http://localhost:8501",  # local — needs port
-        "https://continuum-health.onrender.com"  # production — no port
+        "https://continuum-health-chat.onrender.com"  # production — no port
     ]
     model_config = {"env_file": str(BASE_DIR / ".env")}
 

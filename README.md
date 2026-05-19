@@ -3,9 +3,9 @@
 
 > Product vision: [Continuum on Medium](https://medium.com/@cheruvu.ranjani/continuum-moving-from-passive-ehr-search-to-agentic-patient-access-4455a15786a0)
 
-> Live demo: [continuum-health.onrender.com](http://localhost:8501/)
+> Live demo: [continuum-health.onrender.com](https://continuum-health-chat.onrender.com)
 
-> Live API: [continuum-health-api.onrender.com/redoc](<RENDER_URL>/redoc)
+> Live API: [continuum-health-api.onrender.com/redoc](https://continuum-health.onrender.com/redoc)
 
 ---
 
@@ -77,7 +77,7 @@ The routing decision is made by Claude (Anthropic) using autonomous tool calling
 
 ## Live Demo
 
-Try the chatbot: [continuum-health.onrender.com](http://localhost:8501/)
+Try the chatbot: [continuum-health.onrender.com](https://continuum-health-chat.onrender.com)
 
 Walk through the conversational flow. Select your insurance plan and location. Continuum resolves your provider network, routes you to the nearest available slot, and surfaces an in-network pharmacy. Everything tracked as MTTR in the dashboard tab.
 
