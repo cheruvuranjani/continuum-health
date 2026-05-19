@@ -1,0 +1,117 @@
+[
+  {
+    "provider_id": "pac-001",
+    "name": "Dr. Maria Lopez",
+    "specialty": "primary_care",
+    "network": "Pacific Medical Group",
+    "address": "3801 Pacific Heights Blvd, San Francisco, CA",
+    "lat": 37.7871,
+    "lng": -122.4577,
+    "slots": [
+      {
+        "datetime": "2026-05-08T08:00:00",
+        "available": true
+      },
+      {
+        "datetime": "2026-05-08T16:00:00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "provider_id": "pac-002",
+    "name": "Dr. Aisha Patel",
+    "specialty": "primary_care",
+    "network": "Pacific Medical Group",
+    "address": "500 Pacific Medical Way, San Francisco, CA",
+    "lat": 37.7750,
+    "lng": -122.4183,
+    "slots": [
+      {
+        "datetime": "2026-05-08T09:00:00",
+        "available": true
+      },
+      {
+        "datetime": "2026-05-08T13:00:00",
+        "available": false
+      }
+    ]
+  },
+  {
+    "provider_id": "pac-urg-001",
+    "name": "Pacific Urgent Care",
+    "specialty": "urgent_care",
+    "network": "Pacific Medical Group",
+    "address": "1200 Pacific Ave, San Francisco, CA",
+    "lat": 37.7965,
+    "lng": -122.4232,
+    "slots": [
+      {
+        "datetime": "2026-05-08T09:00:00",
+        "available": true
+      },
+      {
+        "datetime": "2026-05-08T10:00:00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "provider_id": "pac-pharm-001",
+    "name": "Pacific Care Pharmacy",
+    "specialty": "pharmacy",
+    "network": "Pacific Medical Group",
+    "address": "2535 Mission St, San Francisco, CA",
+    "lat": 37.7524,
+    "lng": -122.4184,
+    "slots": [],
+    "is_open_24h": false,
+    "phone": "415-555-3911"
+  },
+  {
+    "provider_id": "pac-003",
+    "name": "Dr. Kevin Walsh",
+    "specialty": "primary_care",
+    "network": "Pacific Medical Group",
+    "address": "100 N Winchester Blvd, San Jose, CA",
+    "lat": 37.3185,
+    "lng": -121.9390,
+    "slots": [
+      {
+        "datetime": "2026-05-08T09:00:00",
+        "available": true
+      },
+      {
+        "datetime": "2026-05-08T13:00:00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "provider_id": "pac-urg-002",
+    "name": "Pacific Urgent Care San Jose",
+    "specialty": "urgent_care",
+    "network": "Pacific Medical Group",
+    "address": "2400 Alum Rock Ave, San Jose, CA",
+    "lat": 37.3696,
+    "lng": -121.8420,
+    "slots": [
+      {
+        "datetime": "2026-05-08T10:00:00",
+        "available": true
+      }
+    ]
+  },
+  {
+    "provider_id": "pac-pharm-002",
+    "name": "Pacific Care Pharmacy San Jose",
+    "specialty": "pharmacy",
+    "network": "Pacific Medical Group",
+    "address": "1600 Saratoga Ave, San Jose, CA",
+    "lat": 37.3066,
+    "lng": -121.9930,
+    "slots": [],
+    "is_open_24h": false,
+    "phone": "408-555-1200"
+  }
+]

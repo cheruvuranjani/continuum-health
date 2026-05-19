@@ -1,0 +1,120 @@
+# ─────────────────────────────────────────────────────────────────────
+# Continuum — Insurance Network Configuration
+#
+# Defines the provider network for each insurance plan.
+# Adding a new plan = one new entry here. Zero code changes.
+#
+# Production architecture:
+#   TABLE: insurance_networks
+#   ┌─────────────────┬──────────────────────────────────────┐
+#   │ column          │ type                                 │
+#   ├─────────────────┼──────────────────────────────────────┤
+#   │ id              │ UUID PRIMARY KEY                     │
+#   │ plan_key        │ VARCHAR(100) UNIQUE NOT NULL         │
+#   │ name            │ VARCHAR(200) NOT NULL                │
+#   │ type            │ ENUM(hmo, ppo, open)                 │
+#   │ sources         │ JSONB NOT NULL                       │
+#   │ is_active       │ BOOLEAN DEFAULT true                 │
+#   │ created_at      │ TIMESTAMP DEFAULT now()              │
+#   │ updated_at      │ TIMESTAMP DEFAULT now()              │
+#   └─────────────────┴──────────────────────────────────────┘
+#
+#   Loaded via cache-aside pattern:
+#   Redis (1hr TTL) → PostgreSQL fallback on cache miss.
+#   Network config updates take effect without redeployment.
+# ─────────────────────────────────────────────────────────────────────
+
+networks:
+
+  # HMO — closed network, HealthFirst patients routed exclusively
+  # within HealthFirst Medical system. No out-of-network access.
+  healthfirst:
+    name: "HealthFirst HMO"
+    type: "hmo"
+    sources:
+      - path: "app/data/providers_healthfirst.json"
+        network: "HealthFirst Medical"
+
+  healthfirst hmo:
+    name: "HealthFirst HMO"
+    type: "hmo"
+    sources:
+      - path: "app/data/providers_healthfirst.json"
+        network: "HealthFirst Medical"
+
+  # PPO — open network, federates across Bayview Health and
+  # Pacific Medical Group. Patient routed to closest available
+  # slot across both systems simultaneously.
+  medconnect:
+    name: "MedConnect PPO"
+    type: "ppo"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+
+  medconnect ppo:
+    name: "MedConnect PPO"
+    type: "ppo"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+
+  careshield:
+    name: "CareShield PPO"
+    type: "ppo"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+
+  unityhealth:
+    name: "UnityHealth PPO"
+    type: "ppo"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+
+  clearpath:
+    name: "ClearPath PPO"
+    type: "ppo"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+
+  # Open network — uninsured or unknown plan.
+  # Maximum coverage — federates across all available networks
+  # including urgent care index. No network restriction.
+  uninsured:
+    name: "Open Network"
+    type: "open"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+      - path: "app/data/providers_quickcare.json"
+        network: "QuickCare Clinics"
+      - path: "app/data/providers_cityurgent.json"
+        network: "CityUrgent Care"
+
+  self pay:
+    name: "Open Network"
+    type: "open"
+    sources:
+      - path: "app/data/providers_bayview.json"
+        network: "Bayview Health"
+      - path: "app/data/providers_pacific.json"
+        network: "Pacific Medical Group"
+      - path: "app/data/providers_quickcare.json"
+        network: "QuickCare Clinics"
+      - path: "app/data/providers_cityurgent.json"
+        network: "CityUrgent Care"

@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+# Claude Tool Definitions — Continuum Routing Engine
+#
+# Current: YAML-based for portability in portfolio/demo.
+#
+# Production architecture:
+#   TABLE: claude_tools
+#   ┌─────────────────┬──────────────────────────────────────┐
+#   │ column          │ type                                 │
+#   ├─────────────────┼──────────────────────────────────────┤
+#   │ id              │ UUID PRIMARY KEY                     │
+#   │ name            │ VARCHAR(100) UNIQUE NOT NULL         │
+#   │ description     │ TEXT NOT NULL                        │
+#   │ input_schema    │ JSONB NOT NULL                       │
+#   │ is_active       │ BOOLEAN DEFAULT true                 │
+#   │ version         │ INTEGER DEFAULT 1                    │
+#   │ created_at      │ TIMESTAMP DEFAULT now()              │
+#   │ updated_at      │ TIMESTAMP DEFAULT now()              │
+#   └─────────────────┴──────────────────────────────────────┘
+#
+#   Loaded via cache-aside pattern:
+#   Redis (1hr TTL) → PostgreSQL fallback on cache miss.
+#   Enables dynamic tool updates with zero redeployment.
+# ─────────────────────────────────────────────────────────────
+
+tools:
+  - name: get_available_slots
+    description: >
+      Fetch available primary care appointment slots within
+      the patient's search radius. Always call this first.
+    input_schema:
+      type: object
+      properties:
+        specialty:
+          type: string
+          description: Care type e.g. primary_care
+        radius_miles:
+          type: integer
+          description: Search radius in miles
+      required:
+        - specialty
+
+  - name: get_urgent_care
+    description: >
+      Fallback find urgent care options when primary care
+      slots = 0. Only call after get_available_slots returns
+      empty. This is the agentic failover path.
+    input_schema:
+      type: object
+      properties: {}
+      required: []
+
+  - name: find_pharmacy
+    description: >
+      Find the nearest open pharmacy within radius, factoring
+      in 24hr availability and patient insurance network.
+      Always call this last to close the care loop.
+    input_schema:
+      type: object
+      properties: {}
+      required: []

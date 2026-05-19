@@ -1,0 +1,54 @@
+[
+  {
+    "provider_id": "bv-001",
+    "name": "Dr. Sarah Chen",
+    "specialty": "primary_care",
+    "network": "Bayview Health",
+    "address": "450 Bayview Medical Dr, San Francisco, CA",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T11:00:00", "available": false},
+      {"datetime": "2026-05-08T14:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "bv-002",
+    "name": "Dr. James Okafor",
+    "specialty": "primary_care",
+    "network": "Bayview Health",
+    "address": "2100 Bayview St, San Francisco, CA",
+    "lat": 37.7812,
+    "lng": -122.4356,
+    "slots": [
+      {"datetime": "2026-05-08T10:00:00", "available": false},
+      {"datetime": "2026-05-08T15:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "bv-urg-001",
+    "name": "Bayview Express Care",
+    "specialty": "urgent_care",
+    "network": "Bayview Health",
+    "address": "2333 Bayview Ave, San Francisco, CA",
+    "lat": 37.7918,
+    "lng": -122.4317,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T10:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "bv-pharm-001",
+    "name": "Bayview Pharmacy 24hr",
+    "specialty": "pharmacy",
+    "network": "Bayview Health",
+    "address": "498 Castro St, San Francisco, CA",
+    "lat": 37.7609,
+    "lng": -122.4350,
+    "slots": [],
+    "is_open_24h": true,
+    "phone": "415-555-0611"
+  }
+]

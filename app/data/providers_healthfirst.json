@@ -1,0 +1,53 @@
+[
+  {
+    "provider_id": "hf-001",
+    "name": "Dr. Priya Nair",
+    "specialty": "primary_care",
+    "network": "HealthFirst Medical",
+    "address": "100 HealthFirst Plaza, Oakland, CA",
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T11:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "hf-002",
+    "name": "Dr. David Kim",
+    "specialty": "primary_care",
+    "network": "HealthFirst Medical",
+    "address": "280 W MacArthur Blvd, Oakland, CA",
+    "lat": 37.8271,
+    "lng": -122.2913,
+    "slots": [
+      {"datetime": "2026-05-08T10:00:00", "available": false},
+      {"datetime": "2026-05-08T14:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "hf-urg-001",
+    "name": "HealthFirst Urgent Care Oakland",
+    "specialty": "urgent_care",
+    "network": "HealthFirst Medical",
+    "address": "3600 Broadway, Oakland, CA",
+    "lat": 37.8344,
+    "lng": -122.2627,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T09:30:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "hf-pharm-001",
+    "name": "HealthFirst Pharmacy Oakland",
+    "specialty": "pharmacy",
+    "network": "HealthFirst Medical",
+    "address": "100 HealthFirst Plaza, Oakland, CA",
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "slots": [],
+    "is_open_24h": false,
+    "phone": "510-555-1000"
+  }
+]

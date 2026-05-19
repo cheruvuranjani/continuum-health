@@ -1,0 +1,39 @@
+[
+  {
+    "provider_id": "cu-001",
+    "name": "CityUrgent Care - Downtown",
+    "specialty": "urgent_care",
+    "network": "CityUrgent Care",
+    "address": "1 South Van Ness Ave, San Francisco, CA",
+    "lat": 37.7749,
+    "lng": -122.4182,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T09:30:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "cu-002",
+    "name": "CityUrgent Care - Mission",
+    "specialty": "urgent_care",
+    "network": "CityUrgent Care",
+    "address": "3850 17th St, San Francisco, CA",
+    "lat": 37.7612,
+    "lng": -122.4298,
+    "slots": [
+      {"datetime": "2026-05-08T11:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "cu-pharm-001",
+    "name": "CityUrgent Pharmacy",
+    "specialty": "pharmacy",
+    "network": "CityUrgent Care",
+    "address": "301 Castro St, San Francisco, CA",
+    "lat": 37.7622,
+    "lng": -122.4350,
+    "slots": [],
+    "is_open_24h": false,
+    "phone": "415-555-6789"
+  }
+]

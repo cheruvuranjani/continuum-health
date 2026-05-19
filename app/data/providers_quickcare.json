@@ -1,0 +1,41 @@
+[
+  {
+    "provider_id": "qc-001",
+    "name": "QuickCare Clinics - Mission",
+    "specialty": "urgent_care",
+    "network": "QuickCare Clinics",
+    "address": "3055 23rd St, San Francisco, CA",
+    "lat": 37.7527,
+    "lng": -122.4168,
+    "slots": [
+      {"datetime": "2026-05-08T09:00:00", "available": true},
+      {"datetime": "2026-05-08T09:30:00", "available": true},
+      {"datetime": "2026-05-08T10:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "qc-002",
+    "name": "QuickCare Clinics - Castro",
+    "specialty": "urgent_care",
+    "network": "QuickCare Clinics",
+    "address": "2235 Market St, San Francisco, CA",
+    "lat": 37.7643,
+    "lng": -122.4349,
+    "slots": [
+      {"datetime": "2026-05-08T11:00:00", "available": true},
+      {"datetime": "2026-05-08T12:00:00", "available": true}
+    ]
+  },
+  {
+    "provider_id": "qc-pharm-001",
+    "name": "QuickCare Pharmacy 24hr",
+    "specialty": "pharmacy",
+    "network": "QuickCare Clinics",
+    "address": "498 Castro St, San Francisco, CA",
+    "lat": 37.7609,
+    "lng": -122.4350,
+    "slots": [],
+    "is_open_24h": true,
+    "phone": "415-555-4200"
+  }
+]
