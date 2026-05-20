@@ -265,4 +265,4 @@ Continuum is a portfolio and educational project. All provider names, insurance 
 
 ---
 
-Built by Ranjani Renganathan - AI Product Manager 
+Built by Ranjani Renganathan
